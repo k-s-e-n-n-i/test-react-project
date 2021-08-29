@@ -1,5 +1,5 @@
 import './start-page.scss';
-import Link from 'src/blocks/link/link';
+import Link from './blocks/link/link';
 
 function StartPage() {
   return (
