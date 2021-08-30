@@ -1,28 +1,22 @@
-import { Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './pages/start-page/start-page.scss';
-import Link from './blocks/link/link';
+import Layout from './components/layout/layout';
+
 import StartPage from './pages/start-page/start-page';
 import LandingPage from './pages/landing-page/landing-page';
 
 function App() {
+  const startPage = () => <StartPage />;
+  const landingPage = () => <LandingPage />;
   return (
-    <div class="start-page">
-      <h2>Pages Toxin:</h2>
-      <div class="start-page__links">
-        <Link classBlock="start-page__link" text="landing page" url="./landing-page.html" />
-        <Link classBlock="start-page__link" text="registration" />
-        <Link classBlock="start-page__link" text="sing in" />
-        <Link classBlock="start-page__link" text="search room" />
-      </div>
-      <div className="App">
-        <Router>
-          <div>
-            <Route exact path="/" component={StartPage} />
-            <Route exact path="/landing-page" component={LandingPage} />
-          </div>
-        </Router>
-      </div>
-    </div>
+    <Router>
+      <Route exact path="/">
+        <Layout header={0} content={startPage} footer={0} />
+      </Route>
+      <Route exact path="/landing-page.html">
+        <Layout content={landingPage} footer />
+      </Route>
+    </Router>
   );
 }
 
