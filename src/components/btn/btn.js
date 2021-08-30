@@ -14,7 +14,7 @@ class Btn extends React.Component {
   render() {
     return (
       <div
-        class={
+        className={
           'btn ' +
           (this.border ? 'btn_border ' : 'btn_gradient ') +
           (this.height === 'narrow' ? 'btn_narrow ' : 'btn_wide ') +
@@ -23,20 +23,20 @@ class Btn extends React.Component {
       >
         <button
           type="button"
-          class={
+          className={
             'btn__block' +
             (this.border
               ? ' btn__block_border '
               : ' btn__block_gradient ' + (this.arrow ? 'btn__block_gradient_arrow' : ''))
           }
         >
-          <a class="btn__link" href={this.link}>
+          <a className="btn__link" href={this.link}>
             {this.text}
           </a>
-          {this.arrow ? <div class="btn__arrow btn__arrow_white"></div> : ''}
+          {this.arrow ? <div className="btn__arrow btn__arrow_white"></div> : ''}
         </button>
 
-        {this.border ? <div class={'btn__border ' + (this.hover ? 'btn__border_hover ' : '')}></div> : ''}
+        {this.border ? <div className={'btn__border ' + (this.hover ? 'btn__border_hover ' : '')}></div> : ''}
       </div>
     );
   }

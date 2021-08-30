@@ -22,23 +22,23 @@ class Header extends React.Component {
   menu(items) {
     return items.map((item) => (
       <li
-        class={
+        className={
           'header__menu-li ' +
           (item.state === 'active' ? 'header__menu-li_active' : '') +
           (item.type === 'expand' ? 'header__menu-li_expand js-header__menu-li_expand' : '')
         }
       >
-        <a class="header__menu-a" href={item.link}>
+        <a className="header__menu-a" href={item.link}>
           {item.menuItem}
         </a>
-        {item.submenu && <ul class="header__submenu">{this.submenu(item.submenu)}</ul>}
+        {item.submenu && <ul className="header__submenu">{this.submenu(item.submenu)}</ul>}
       </li>
     ));
   }
   submenu(sbm) {
     return sbm.map((sbmItem) => (
-      <li class="header__submenu-li">
-        <a class="header__submenu-a" href={sbmItem.sbmLink}>
+      <li className="header__submenu-li">
+        <a className="header__submenu-a" href={sbmItem.sbmLink}>
           {sbmItem.menuItem}
         </a>
       </li>
@@ -46,29 +46,29 @@ class Header extends React.Component {
   }
   render() {
     return (
-      <header class="header">
-        <div class="header__content-container">
-          <a class="header__logo-link" href="./landing-page.html">
-            <img class="header__logo" src={logo} alt="logo" />
+      <header className="header">
+        <div className="header__content-container">
+          <a className="header__logo-link" href="./landing-page.html">
+            <img className="header__logo" src={logo} alt="logo" />
           </a>
-          <div class="header__menu-mobile js-header__menu-mobile"></div>
-          <div class="header__links header__links_hidden">
+          <div className="header__menu-mobile js-header__menu-mobile"></div>
+          <div className="header__links header__links_hidden">
             {this.menuItems && (
-              <nav class="header__block-menu">
-                <ul class="header__menu">{this.menu(this.menuItems)}</ul>
+              <nav className="header__block-menu">
+                <ul className="header__menu">{this.menu(this.menuItems)}</ul>
               </nav>
             )}
             {this.authorization ? (
-              <div class="header__block-login">
-                <div class="header__login-vertical-line"></div>
+              <div className="header__block-login">
+                <div className="header__login-vertical-line"></div>
                 <p>{this.userName}</p>
               </div>
             ) : (
-              <div class="header__block-login">
-                <div class="header__btn header__btn_border">
+              <div className="header__block-login">
+                <div className="header__btn header__btn_border">
                   <Btn date={this.btnLogin} />
                 </div>
-                <div class="header__btn header__btn_gradient">
+                <div className="header__btn header__btn_gradient">
                   <Btn date={this.btnRegistr} />
                 </div>
               </div>

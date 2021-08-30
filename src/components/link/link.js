@@ -36,8 +36,8 @@ class Link extends React.Component {
   }
   render() {
     return (
-      <div class={this.props.classBlock}>
-        <a class={this.defineType()} href={this.defineUrl()}>
+      <div className={this.props.classBlock}>
+        <a className={this.defineType()} href={this.defineUrl()}>
           {this.defineText()}
         </a>
       </div>
