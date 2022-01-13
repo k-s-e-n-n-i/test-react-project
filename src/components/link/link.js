@@ -4,7 +4,7 @@ import './link.scss';
 class Link extends React.Component {
   constructor(props) {
     super(props);
-    this.date = {
+    this.data = {
       url: './link-stub',
       text: 'Ссылка',
       type: '',
@@ -12,13 +12,13 @@ class Link extends React.Component {
     };
   }
   defineUrl() {
-    return this.props.url || this.date.url;
+    return this.props.url || this.data.url;
   }
   defineText() {
-    return this.props.text || this.date.text;
+    return this.props.text || this.data.text;
   }
   defineType() {
-    const type = this.props.type || this.date.type;
+    const type = this.props.type || this.data.type;
     switch (type) {
       case 'gray': {
         return 'link link_gray';
