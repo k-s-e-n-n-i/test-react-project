@@ -1,4 +1,4 @@
-.btn {
+.button {
   position: relative;
   border-radius: 22px;
   z-index: 1;
@@ -13,11 +13,11 @@
   &_gradient {
     background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
 
-    &.btn_narrow {
+    &.button_narrow {
       padding: 5px 14px;
     }
 
-    &.btn_wide {
+    &.button_wide {
       padding: 13px;
     }
 
@@ -28,25 +28,25 @@
   }
 
   &_border {
-    &.btn_narrow {
+    &.button_narrow {
       min-width: 87px;
 
-      > .btn__block_border {
+      > .button__block_border {
         padding: 7px 10px;
       }
     }
 
-    &.btn_wide {
+    &.button_wide {
       min-width: 99px;
 
-      > .btn__block_border {
+      > .button__block_border {
         padding: 12px 15px;
       }
     }
 
     &:hover,
     &:focus {
-      > .btn__border {
+      > .button__border {
         opacity: 0.5;
       }
     }
@@ -67,7 +67,7 @@
   }
 
   &__block_gradient_arrow {
-    .btn__link {
+    .button__link {
       padding-right: 5px;
     }
   }
@@ -110,7 +110,7 @@
     border-radius: 22px;
     margin: 0 2px;
 
-    .btn__link {
+    .button__link {
       color: #bc9cff;
     }
   }
