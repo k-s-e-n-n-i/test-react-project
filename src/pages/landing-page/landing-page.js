@@ -1,15 +1,26 @@
+import React from 'react';
 import './landing-page.scss';
+import FormSearchRoom from '../../components/form-search-room/form-search-room';
 
-function LandingPage() {
-  return (
-    <main class="landing-page">
-      <div class="landing-page__content-container">
-        <div class="landing-page__form-search-num">
-          <p>landing-page__background-text Лучшие номера для вашей работы, отдыха и просто вдохновения</p>
+class LandingPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.data = {};
+  }
+  render() {
+    return (
+      <main className="landing-page">
+        <div className="landing-page__content-container">
+          <div className="landing-page__form-search-num">
+            <FormSearchRoom />
+          </div>
+          <p className="landing-page__background-text">
+            Лучшие номера для вашей работы, отдыха и просто вдохновения
+          </p>
         </div>
-      </div>
-    </main>
-  );
+      </main>
+    );
+  }
 }
 
 export default LandingPage;
