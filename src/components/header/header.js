@@ -6,9 +6,10 @@ import Btn from '../../components/btn/btn';
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.menuItems = this.props.date.items || false;
-    this.authorization = this.props.date.authorization || false;
-    this.userName = this.props.date.name || 'Имя';
+    this.key = this.props.keyID;
+    this.menuItems = this.props.data.items || false;
+    this.authorization = this.props.data.authorization || false;
+    this.userName = this.props.data.name || 'Имя';
     this.btnLogin = {
       height: 'narrow',
       text: 'Войти',
@@ -19,7 +20,7 @@ class Header extends React.Component {
       text: 'Зарегистрироваться',
     };
   }
-  menu(items) {
+  printMenu(items) {
     return items.map((item) => (
       <li
         className={
@@ -45,31 +46,33 @@ class Header extends React.Component {
     ));
   }
   render() {
+    let { key, menuItems, authorization, userName, btnLogin, btnRegistr } = this;
+
     return (
-      <header className="header">
+      <header className="header" key={key}>
         <div className="header__content-container">
           <a className="header__logo-link" href="./landing-page.html">
             <img className="header__logo" src={logo} alt="logo" />
           </a>
           <div className="header__menu-mobile js-header__menu-mobile"></div>
           <div className="header__links header__links_hidden">
-            {this.menuItems && (
+            {menuItems && (
               <nav className="header__block-menu">
-                <ul className="header__menu">{this.menu(this.menuItems)}</ul>
+                <ul className="header__menu">{this.printMenu(menuItems)}</ul>
               </nav>
             )}
-            {this.authorization ? (
+            {authorization ? (
               <div className="header__block-login">
                 <div className="header__login-vertical-line"></div>
-                <p>{this.userName}</p>
+                <p>{userName}</p>
               </div>
             ) : (
               <div className="header__block-login">
                 <div className="header__btn header__btn_border">
-                  <Btn date={this.btnLogin} />
+                  <Btn data={btnLogin} />
                 </div>
                 <div className="header__btn header__btn_gradient">
-                  <Btn date={this.btnRegistr} />
+                  <Btn data={btnRegistr} />
                 </div>
               </div>
             )}
