@@ -6,6 +6,7 @@ class Layout extends React.Component {
   constructor(props) {
     super(props);
     this.header = {
+      on: this.props.header === 0 ? false : true,
       items: [
         {
           menuItem: 'О нас',
@@ -42,13 +43,16 @@ class Layout extends React.Component {
         },
       ],
     };
+    this.footer = {
+      on: this.props.footer === 0 ? false : true,
+    };
   }
   render() {
     return (
       <div>
-        {this.props.header !== 0 && <Header date={this.header} />}
+        {this.header.on && <Header data={this.header} />}
         {this.props.content && this.props.content()}
-        {this.props.footer !== 0 && <Footer />}
+        {this.footer.on && <Footer />}
       </div>
     );
   }

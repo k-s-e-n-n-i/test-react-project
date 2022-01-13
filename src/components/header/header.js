@@ -6,7 +6,6 @@ import Btn from '../../components/button/button';
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.key = this.props.keyID;
     this.menuItems = this.props.data.items || false;
     this.authorization = this.props.data.authorization || false;
     this.userName = this.props.data.name || 'Имя';
@@ -46,10 +45,10 @@ class Header extends React.Component {
     ));
   }
   render() {
-    let { key, menuItems, authorization, userName, btnLogin, btnRegistr } = this;
+    let { menuItems, authorization, userName, btnLogin, btnRegistr } = this;
 
     return (
-      <header className="header" key={key}>
+      <header className="header">
         <div className="header__content-container">
           <a className="header__logo-link" href="./landing-page.html">
             <img className="header__logo" src={logo} alt="logo" />

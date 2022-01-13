@@ -14,7 +14,7 @@ function App() {
         <Layout header={0} content={startPage} footer={0} />
       </Route>
       <Route exact path="/landing-page.html">
-        <Layout content={landingPage} footer />
+        <Layout content={landingPage} />
       </Route>
     </Router>
   );
