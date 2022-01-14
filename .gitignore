@@ -33,3 +33,5 @@ config-overrides.js
 craco.config.js
 package.json
 tsconfig.json
+package-lock.json
+yarn-lock.json
