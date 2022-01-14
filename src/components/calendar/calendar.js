@@ -1,6 +1,6 @@
 import React from 'react';
 //import './calendar.ts';
-import 'air-datepicker';
+//import 'air-datepicker';
 import './cell.scss';
 import './datepicker-config.scss';
 import './datepicker.scss';
