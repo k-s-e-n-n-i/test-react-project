@@ -40,7 +40,7 @@ class InputText extends React.Component {
           name={name}
           placeholder={placeholder}
           id={`inputText${id}`}
-          value={inputText}
+          defaultValue={inputText}
         ></input>
       </div>
     );
