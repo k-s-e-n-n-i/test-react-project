@@ -4,6 +4,7 @@ import './social.scss';
 class Social extends React.Component {
   constructor(props) {
     super(props);
+    this.id = this.props.id || 'soc';
     this.twitter = {
       on: this.props.twitter || false,
       name: 'twitter',
@@ -32,7 +33,7 @@ class Social extends React.Component {
         {this.socs.map(
           (soc, index) =>
             soc.on && (
-              <span className="social__item">
+              <span className="social__item" key={`${this.id}item${index}`}>
                 <a href={soc.link}>
                   <img className={`social__item ${soc.name}`} src={soc.icon} alt={soc.name}></img>
                 </a>

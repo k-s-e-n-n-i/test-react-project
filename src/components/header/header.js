@@ -6,6 +6,7 @@ import Btn from '../../components/button/button';
 class Header extends React.Component {
   constructor(props) {
     super(props);
+    this.id = this.props.data.id || 'header';
     this.menuItems = this.props.data.items || false;
     this.authorization = this.props.data.authorization || false;
     this.userName = this.props.data.name || 'Имя';
@@ -20,13 +21,14 @@ class Header extends React.Component {
     };
   }
   printMenu(items) {
-    return items.map((item) => (
+    return items.map((item, index) => (
       <li
         className={
           'header__menu-li ' +
           (item.state === 'active' ? 'header__menu-li_active' : '') +
           (item.type === 'expand' ? 'header__menu-li_expand js-header__menu-li_expand' : '')
         }
+        key={`${this.id}menu${index}`}
       >
         <a className="header__menu-a" href={item.link}>
           {item.menuItem}
@@ -36,8 +38,8 @@ class Header extends React.Component {
     ));
   }
   submenu(sbm) {
-    return sbm.map((sbmItem) => (
-      <li className="header__submenu-li">
+    return sbm.map((sbmItem, index) => (
+      <li className="header__submenu-li" key={`${this.id}submenu${index}`}>
         <a className="header__submenu-a" href={sbmItem.sbmLink}>
           {sbmItem.menuItem}
         </a>

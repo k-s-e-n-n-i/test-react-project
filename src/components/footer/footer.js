@@ -7,6 +7,7 @@ import InputText from '../../components/input-text/input-text';
 class Footer extends React.Component {
   constructor(props) {
     super(props);
+    this.id = this.props.id || 'footer';
     this.footerMenu = [
       {
         topic: 'Навигация',
@@ -78,11 +79,11 @@ class Footer extends React.Component {
 
             <ul className="footer__footer-menu">
               {this.footerMenu.map((column, index) => (
-                <li className="footer__menu-column" key={index}>
+                <li className="footer__menu-column" key={`${this.id}col${index}`}>
                   <ul className="footer__menu-list">
                     <li className="footer__menu-topic-column">{column.topic}</li>
                     {column.listMenu.map((itemLink, index) => (
-                      <li className="footer__menu-li">
+                      <li className="footer__menu-li" key={`${this.id}li${index}`}>
                         <a className="footer__menu-a" href={itemLink.link || './link-stub'}>
                           {itemLink.text}
                         </a>
