@@ -9,16 +9,16 @@ import './navigation.scss';
 class Calendar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.state || 'close';
+    this.open = this.props.state === 'open' ? true : false;
     this.classWrapper = this.props.classWrapper || '';
   }
 
   render() {
-    let { state, classWrapper } = this;
+    let { open, classWrapper } = this;
 
     return (
       <div className={classWrapper}>
-        {state === 'open' ? (
+        {open ? (
           <div className="datepicker-here js-datepicker-here"></div>
         ) : (
           <div className="datepicker-here js-datepicker-here datepicker-here_hide"></div>
